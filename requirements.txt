@@ -1,0 +1,2 @@
+libexiv2-dev
+doxygen
