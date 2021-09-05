@@ -124,14 +124,15 @@ bool Directory::ComparePrint(const File & other, std::ostream & os) const{
 	intersection(files.cbegin(), files.cend(), dir_other.files.cbegin(), dir_other.files.cend(),
 			difference_this, difference_other, intersect_this, intersect_other, FileComparator());
 
-	os << path <<  ":" << '\n';
+	if(!difference_this.empty() || ! difference_other.empty()){
+		os << path <<  ":" << '\n';
+		for(const auto & file : difference_this){
+			os << std::string(SPACING, ' ') << "+ "; file->Print(os);
+		}
 
-	for(const auto & file : difference_this){
-		os << std::string(SPACING, ' ') << "+ "; file->Print(os);
-	}
-
-	for(const auto & file : difference_other){
-		os << std::string(SPACING, ' ') << "- "; file->Print(os);
+		for(const auto & file : difference_other){
+			os << std::string(SPACING, ' ') << "- "; file->Print(os);
+		}
 	}
 	bool res = true;
 	auto it_this = intersect_this.cbegin();

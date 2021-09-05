@@ -1,9 +1,9 @@
 # Let us define some constants
 CXX= g++
-CXXFLAGS= -std=c++20 -lstdc++fs -Wall -pedantic
+CXXFLAGS= -std=c++2a -lstdc++fs -Wall -pedantic
 LIB= -lpng -lexiv2 -lstdc++fs
 LD= g++
-LDFLAGS = -std=c++20
+LDFLAGS = -std=c++2a
 NAME=Archivator
 SRC=src
 DOC=doc
