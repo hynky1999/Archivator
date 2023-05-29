@@ -1,2 +1,3 @@
 libexiv2-dev
+libpng-dev
 doxygen

@@ -1,5 +1,6 @@
-#Indexovací nástroj
+# Indexovací nástroj
 
+## Použití
 Nástroj pro indexování obsahu (soubory, podadresáře) zadaného adresáře/souboru a zároveň nástroj který dokáže provádět dotazy nad vytvořeným indexem.
 Spíše nežli na kvantitu je nástroj zaměřen na kvalitní návrh, který je velice snadno rozšiřitelný, zvláště pak tvorba dotazů díky templatované třídě Query.
 Program dokáže rozpoznat tyto druhy soubor: Složka, Textový soubor, JPG soubor, PNG soubor, FIFO, blokový soubor, socket, řetězcový soubor a symbolic link.
@@ -15,6 +16,7 @@ Výsledný index je vytvořen -c --create(filename) a uložen -s --save(indexnam
 Při vytváření indexu z adresáře/souboru je možno -f --follow_sym_links nastavit, aby symoblic linky místo pouhé uložený byly intepretovány jako to, na co ukazují.
 Vytvořený index je možno porovnávat s jinými indexy -C --compare (indexname). Při výpisu porovnání je vidět jaké soubory byly přidány odebrány popřípadé modifikovány.
 Zárověn je možno index vypsat ve stromové struktuře -p --print.
+
 
 Největší důraz je kladen na hledání v indexu -Q --search (dotaz)
 Nad indexem je možno vytvořit jakýkoliv dotaz na jakoukoliv vlastnot výše popsanou.
@@ -35,3 +37,15 @@ Bohužel již nezbyl čas na vytvoření lexeru, a tak je nutno mezi každým sl
 Samotné hledání vypíše pouze krátký výpis pro změnu výpisu je nutno zavolat hledání s přepínačem -pe --printe případně -pn --printn pro žádný výpis(pouze celková počet).
 
 Pro rychlou nápovědu stačí zavolat s -h --help
+
+
+## Jak spustit
+Nejprve je třeba nainstalovat potřebné knihovny, ty jsou závislé na distribuci a jsou uvedeny v souboru requirements.txt.
+Poté stačí zavolat:
+```
+make
+```
+To nám vytvoří spustitelný soubor Archivator, který je možno spustit s přepínačem -h --help pro nápovědu.
+
+## Disclaimer
+Nástroj byl vytvořen jako zápočtový program pro předmět BI-PA2 na FIT ČVUT. I po letech mě překvapuje, že jsem napsal něco takto pěkného :)
